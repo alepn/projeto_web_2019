@@ -7,6 +7,10 @@
 	<div class="col-md-6">
 
 		<form action="?pg=processar" method="POST">
+		<div class="form-group">
+		    <label for="inputNome">Nome</label>
+		    <input type="text" class="form-control" id="inputNome" name="nome" aria-describedby="emailHelp" placeholder="Digite seu nome">		    
+		 </div>
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Email</label>
 		    <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Digite seu e-mail">		    

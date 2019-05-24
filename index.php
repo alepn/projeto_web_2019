@@ -1,3 +1,10 @@
+<?php
+
+//Incluindo o arquivo de conexao com o banco de dados
+require_once("config/conexao_bd.php");
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -29,6 +36,7 @@
 					<li><a class="btn btn-primary" role="button" href="?pg=inicio">Início</a></li>
 					<li><a class="btn btn-primary" role="button" href="?pg=sobre">Sobre</a></li>
 					<li><a class="btn btn-primary" role="button" href="?pg=cadastro">Cadastro</a></li>
+					<li><a class="btn btn-primary" role="button" href="?pg=listagem">Listagem</a></li>
 				</ul>
 
 			</div>

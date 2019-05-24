@@ -1,14 +1,19 @@
 <?php
 
+$nome = $_POST["nome"];
 $email = $_POST["email"];
 $senha = $_POST["senha"];
 
-if ($email == "teste@teste.com" && $senha == "123") 
+$sql = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
+
+$query = mysqli_query($link, $sql);
+
+if ($query === TRUE) 
 {
 
 	echo '
 	<div class="alert alert-success" role="alert">
-  		Autenticado com sucesso!
+  		Cadastrado com sucesso!
 	</div>';	
 }
 else{
