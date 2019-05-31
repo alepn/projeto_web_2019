@@ -4,7 +4,13 @@ $nome = $_POST["nome"];
 $email = $_POST["email"];
 $senha = $_POST["senha"];
 
-$sql = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
+if(isset($_GET["editar"]) && $_GET["editar"] != 0){
+	$id = $_GET["editar"];
+	$sql = "UPDATE usuarios SET nome='$nome', email='$email', senha='$senha' WHERE id = $id";
+}
+else{
+	$sql = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
+}
 
 $query = mysqli_query($link, $sql);
 
