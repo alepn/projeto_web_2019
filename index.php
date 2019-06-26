@@ -1,5 +1,17 @@
 <?php
 
+if (isset($_COOKIE["teste"])) {
+	echo $_COOKIE["teste"];
+}
+else{
+	setcookie("teste", "teste", (time() + 30));	
+}
+
+exit;
+
+//Inicializa sessoes
+session_start();
+
 //Incluindo o arquivo de conexao com o banco de dados
 require_once("config/conexao_bd.php");
 
@@ -30,13 +42,22 @@ require_once("config/conexao_bd.php");
 						
 				<h1>Bem-vindo(a) ao meu site!</h1>
 
-				<p>Olá Fulano!</p>
+				<?php
+
+				if(isset($_SESSION["nome_usuario"])){
+
+					echo '<p>Olá '.$_SESSION["nome_usuario"].'!</p>';
+
+				}
+
+				?>
 
 				<ul class="menu">
 					<li><a class="btn btn-primary" role="button" href="?pg=inicio">Início</a></li>
 					<li><a class="btn btn-primary" role="button" href="?pg=sobre">Sobre</a></li>
 					<li><a class="btn btn-primary" role="button" href="?pg=cadastro">Cadastro</a></li>
 					<li><a class="btn btn-primary" role="button" href="?pg=listagem">Listagem</a></li>
+					<li><a class="btn btn-primary" role="button" href="?pg=area_restrita">Área Restrita</a></li>
 				</ul>
 
 			</div>
